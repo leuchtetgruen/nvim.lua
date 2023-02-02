@@ -57,6 +57,7 @@ require('Comment').setup()
 require"surround".setup {mappings_style = "sandwich"}
 require("nvim-autopairs").setup {}
 require("mason").setup()
+require('lualine').setup()
 
 require("telescope").setup()
 local builtin = require('telescope.builtin')
