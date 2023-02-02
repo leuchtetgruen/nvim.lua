@@ -55,5 +55,15 @@ return require('packer').startup(function(use)
       -- or                            , branch = '0.1.x',
       requires = { {'nvim-lua/plenary.nvim'} }
     }
+
+    use 'tpope/vim-rails'
+
+    use {
+      'andymass/vim-matchup',
+      setup = function()
+        -- may set any options here
+        vim.g.matchup_matchparen_offscreen = { method = "popup" }
+      end
+    }
 end)
 

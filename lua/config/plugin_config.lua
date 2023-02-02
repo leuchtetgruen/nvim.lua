@@ -92,7 +92,7 @@ local cmp = require'cmp'
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
   -- need to do this for every language server 
-  local languageservers = {"tsserver", "phpactor", "vuels", "solargraph"}
+  local languageservers = {"tsserver", "phpactor", "vuels", "solargraph", "html"}
   for i, name in  ipairs(languageservers) do
     require'lspconfig'[name].setup{
       on_attach = on_attach,
