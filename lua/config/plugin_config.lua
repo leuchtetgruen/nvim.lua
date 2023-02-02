@@ -1,3 +1,24 @@
+--vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+--  pattern = {"*.vue"},
+--  command = "set ft=vue",
+--})
+
+vim.g.vim_vue_plugin_config = { 
+      syntax= {
+         template = {'html'},
+         script= {'javascript'},
+         style= {'css'},
+      },
+      full_syntax= {},
+      initial_indent= {},
+      attribute= 0,
+      keyword= 0,
+      foldexpr= 0,
+      debug= 0,
+    }
+
+
+
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -47,6 +68,12 @@ vim.keymap.set('n', '<leader>fr', builtin.lsp_references, {})
 -- autocomplete
 local cmp = require'cmp'
  cmp.setup({
+   snippet = {
+     -- REQUIRED - you must specify a snippet engine
+     expand = function(args)
+       vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+     end,
+   },
     window = {
       -- completion = cmp.config.window.bordered(),
       -- documentation = cmp.config.window.bordered(),
@@ -60,7 +87,7 @@ local cmp = require'cmp'
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      -- { name = 'vsnip' }, -- For vsnip users.
+      { name = 'vsnip' }, -- For vsnip users.
       -- { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
