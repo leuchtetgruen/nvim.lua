@@ -67,5 +67,8 @@ return require('packer').startup(function(use)
     }
 
     use 'RRethy/nvim-treesitter-endwise'
+
+    use 'tpope/vim-dadbod'
+    use 'kristijanhusak/vim-dadbod-ui'
 end)
 
