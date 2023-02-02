@@ -65,5 +65,7 @@ return require('packer').startup(function(use)
         vim.g.matchup_matchparen_offscreen = { method = "popup" }
       end
     }
+
+    use 'RRethy/nvim-treesitter-endwise'
 end)
 

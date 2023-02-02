@@ -11,5 +11,8 @@ require('config.plugin_config')
 require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
-  }
+  },
+  endwise = {
+    enable = true,
+  },
 }
