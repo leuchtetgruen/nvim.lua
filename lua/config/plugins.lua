@@ -56,6 +56,7 @@ return require('packer').startup(function(use)
     use 'posva/vim-vue'
 
     use { "williamboman/mason.nvim" } -- for lsp plugin installation
+    use { "williamboman/mason-lspconfig.nvim" } -- for lsp plugin installation
 
     use {
       'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -82,5 +83,9 @@ return require('packer').startup(function(use)
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+
+    -- use 'w0rp/ale'
+    use 'aca/emmet-ls'
+
 end)
 

@@ -34,4 +34,5 @@ vim.api.nvim_set_keymap("n", "S", "<cmd>HopChar2BC<CR>", {noremap=false})
 -- Commenter
 vim.api.nvim_set_keymap("n", "<leader>c<space>", "gcc", {noremap=false})
 
+
 vim.cmd[[colorscheme gruvbox]]

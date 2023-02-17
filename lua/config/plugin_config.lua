@@ -3,19 +3,33 @@
 --  command = "set ft=vue",
 --})
 
-vim.g.vim_vue_plugin_config = { 
-      syntax= {
-         template = {'html'},
-         script= {'javascript'},
-         style= {'css'},
-      },
-      full_syntax= {},
-      initial_indent= {},
-      attribute= 0,
-      keyword= 0,
-      foldexpr= 0,
-      debug= 0,
-    }
+-- vim.g.ale_linters = {php =  {'php', 'phpstan', 'phpmd'}}
+-- vim.g.ale_php_phpstan_executable = './vendor/bin/phpstan'
+-- vim.g.ale_completion_enabled = 0
+-- vim.g.ale_fix_on_save = 1
+-- vim.g.ale_linters = {c= {}}
+--
+-- vim.g.ale_fixers = {
+--    php = {'php_cs_fixer', 'remove_trailing_lines', 'trim_whitespace'},
+-- }
+--
+-- vim.g.ale_php_phpcbf_standard='PSR2'
+-- vim.g.ale_php_phpcs_standard='phpcs.xml.dist'
+-- vim.g.ale_phpmd_ruleset='phpmd.xml'
+--
+-- vim.g.vim_vue_plugin_config = { 
+--       syntax= {
+--          template = {'html'},
+--          script= {'javascript'},
+--          style= {'css'},
+--       },
+--       full_syntax= {},
+--       initial_indent= {},
+--       attribute= 0,
+--       keyword= 0,
+--       foldexpr= 0,
+--       debug= 0,
+--     }
 
 
 
@@ -57,7 +71,14 @@ require('Comment').setup()
 require"surround".setup {mappings_style = "sandwich"}
 require("nvim-autopairs").setup {}
 require("mason").setup()
+require("mason-lspconfig").setup()
 require('lualine').setup()
+
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "php", },
+  highlight = { enable = true, disable = { "php" } },
+}
+
 
 require("telescope").setup()
 local builtin = require('telescope.builtin')
@@ -117,9 +138,10 @@ local cmp = require'cmp'
 
   -- Set up lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
+  capabilities.textDocument.completion.completionItem.snippetSupport = true
 
   -- need to do this for every language server 
-  local languageservers = {"tsserver", "phpactor", "vuels", "solargraph", "html"}
+  local languageservers = {"tsserver", "vuels", "solargraph", "html"}
   for i, name in  ipairs(languageservers) do
     require'lspconfig'[name].setup{
       on_attach = on_attach,
@@ -127,4 +149,30 @@ local cmp = require'cmp'
       capabilities = capabilities
     }
   end
+
+  require'lspconfig'.phpactor.setup{
+    on_attach = on_attach,
+    init_options = {
+        ["language_server_phpstan.enabled"] = true,
+        ["language_server_php_cs_fixer.enabled"] = true,
+        ["symfony.enabled"] = true,
+        ["language_server_psalm.enabled"] = false,
+    },
+    flags = lsp_flags,
+    capabilities = capabilities
+  }
+
+  require 'lspconfig'.emmet_ls.setup({
+    -- on_attach = on_attach,
+    capabilities = capabilities,
+    filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
+    init_options = {
+      html = {
+        options = {
+          -- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+          ["bem.enabled"] = true,
+        },
+      },
+    }
+})
 

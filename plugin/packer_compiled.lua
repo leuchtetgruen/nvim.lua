@@ -105,6 +105,11 @@ _G.packer_plugins = {
     path = "/Users/hanneswalz/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
     url = "https://github.com/hrsh7th/cmp-vsnip"
   },
+  ["emmet-ls"] = {
+    loaded = true,
+    path = "/Users/hanneswalz/.local/share/nvim/site/pack/packer/start/emmet-ls",
+    url = "https://github.com/aca/emmet-ls"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/hanneswalz/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -119,6 +124,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/hanneswalz/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/Users/hanneswalz/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
