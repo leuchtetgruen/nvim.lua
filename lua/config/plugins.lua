@@ -50,7 +50,7 @@ return require('packer').startup(function(use)
 
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
-    use "rafamadriz/friendly-snippets"
+    -- use "rafamadriz/friendly-snippets"
 
     -- use 'leafOfTree/vim-vue-plugin'
     use 'posva/vim-vue'
@@ -87,5 +87,8 @@ return require('packer').startup(function(use)
     -- use 'w0rp/ale'
     use 'aca/emmet-ls'
 
+    use 'Rican7/php-doc-modded'
+
+    use 'adoy/vim-php-refactoring-toolbox'
 end)
 
