@@ -90,5 +90,23 @@ return require('packer').startup(function(use)
     use 'Rican7/php-doc-modded'
 
     use 'adoy/vim-php-refactoring-toolbox'
+
+    -- ai 
+    -- use({
+    --   "jackMort/ChatGPT.nvim",
+    --   config = function()
+    --     require("chatgpt").setup()
+    --   end,
+    --   requires = {
+    --     "MunifTanjim/nui.nvim",
+    --     "nvim-lua/plenary.nvim",
+    --     "nvim-telescope/telescope.nvim"
+    --   },
+    --   opts = {
+    --     api_key_cmd = "echo 'foobar'",
+    --     api_host_cmd = "echo 'leuchtetgruen.de:8081'"
+    --   }
+    -- })
+
 end)
 

@@ -19,3 +19,6 @@ require('nvim-treesitter.configs').setup {
     enable = true
   }
 }
+
+vim.g.codegpt_chat_completions_url = "http://leuchtetgruen.de:8081/v1/chat/completions"
+
