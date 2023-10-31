@@ -181,3 +181,4 @@ local cmp = require'cmp'
     }
 })
 
+require('gen').model = 'zephyr'

@@ -36,12 +36,16 @@ vim.api.nvim_set_keymap("n", "<leader>c<space>", "gcc", {noremap=false})
 
 -- Jump to problems
 vim.api.nvim_set_keymap('n', '<leader>do', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>d[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>d]', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>dn', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>dp', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
 -- If you don't want to use the telescope plug-in but still want to see all the errors/warnings, comment out the telescope line and uncomment this:
 vim.api.nvim_set_keymap('n', '<leader>dd', '<cmd>lua vim.diagnostic.setloclist()<CR>', { noremap = true, silent = true })
 
 -- Code actions
 vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>?', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
+
+-- Call Llm
+vim.api.nvim_set_keymap('v', '<leader><leader>l', ':Llm<cr>', { noremap=true})
 
 vim.cmd[[colorscheme gruvbox]]
