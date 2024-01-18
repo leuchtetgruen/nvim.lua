@@ -94,5 +94,8 @@ return require('packer').startup(function(use)
     -- ai 
     use 'David-Kunz/gen.nvim'
 
+    -- renpy 
+    use 'chaimleib/vim-renpy'
+
 end)
 

@@ -73,6 +73,7 @@ require"surround".setup {mappings_style = "sandwich"}
 require("nvim-autopairs").setup {}
 require("mason").setup()
 require("mason-lspconfig").setup()
+require'lspconfig'.pyright.setup{}
 require('lualine').setup()
 
 require'nvim-treesitter.configs'.setup {
@@ -181,4 +182,7 @@ local cmp = require'cmp'
     }
 })
 
-require('gen').model = 'zephyr'
+-- require('gen').model = 'zephyr'
+-- require('gen').model = 'starling-lm'
+require('gen').model = 'openchat'
+--
