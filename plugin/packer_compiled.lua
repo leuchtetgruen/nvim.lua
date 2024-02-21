@@ -120,6 +120,11 @@ _G.packer_plugins = {
     path = "/Users/hanneswalz/.local/share/nvim/site/pack/packer/start/hop.nvim",
     url = "https://github.com/phaazon/hop.nvim"
   },
+  ["llm.nvim"] = {
+    loaded = true,
+    path = "/Users/hanneswalz/.local/share/nvim/site/pack/packer/start/llm.nvim",
+    url = "https://github.com/huggingface/llm.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/Users/hanneswalz/.local/share/nvim/site/pack/packer/start/lualine.nvim",
@@ -167,9 +172,10 @@ _G.packer_plugins = {
     url = "https://github.com/RRethy/nvim-treesitter-endwise"
   },
   ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/Users/hanneswalz/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/nvim-tree/nvim-web-devicons"
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/hanneswalz/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,

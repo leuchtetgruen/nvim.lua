@@ -46,6 +46,6 @@ vim.api.nvim_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<C
 vim.api.nvim_set_keymap('n', '<leader>?', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 
 -- Call Llm
-vim.api.nvim_set_keymap('v', '<leader><leader>l', ':Llm<cr>', { noremap=true})
+vim.api.nvim_set_keymap('n', '<leader><leader>s', ':LLMSuggestion<cr>', { noremap=true})
 
 vim.cmd[[colorscheme gruvbox]]

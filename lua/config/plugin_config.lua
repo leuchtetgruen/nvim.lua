@@ -184,5 +184,19 @@ local cmp = require'cmp'
 
 -- require('gen').model = 'zephyr'
 -- require('gen').model = 'starling-lm'
-require('gen').model = 'openchat'
---
+-- require('gen').model = 'openchat-gpu'
+require('gen').model = 'deepseek-coder:6.7b'
+-- require('gen').model = 'codellama:7b'
+require('gen').command = "curl --silent --no-buffer -X POST http://192.168.1.19:11434/api/generate -d $body"
+-- require('gen').command = "curl --silent --no-buffer -X POST http://ollama.leuchtetgruen.de/api/generate -d $body"
+
+
+require('llm').setup({
+  enable_suggestions_on_startup = false,
+  backend = "ollama",
+  -- model = 'stable-code',
+  model = 'codellama:code',
+  url = "http://192.168.1.19:11434/api/generate",
+  request_body = {
+  }
+})
